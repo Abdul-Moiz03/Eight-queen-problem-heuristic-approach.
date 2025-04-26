@@ -91,6 +91,7 @@ public class C52004EightQueens {
         }
 
         // Test 3: Return fitness value
+        //Each attack is counted twice (Q1 attacks Q2, Q2 attacks Q1)
         return 56.0 - clashes * 2.0;
     }
 
@@ -143,63 +144,4 @@ public class C52004EightQueens {
 
         return current;
     }
-    // Optional: Test main method (can be removed for CodeRunner)
-    public static void main(String[] args) {
-//    	Character[][] validBoard = {
-//              {'.', 'Q', '.', '.', '.', '.', '.', '.'},
-//              {'.', '.', '.', '.', '.', 'Q', '.', '.'},
-//              {'Q', '.', '.', '.', '.', '.', '.', '.'},
-//              {'.', '.', '.', '.', '.', '.', 'Q', '.'},
-//              {'.', '.', '.', 'Q', '.', '.', '.', '.'},
-//              {'.', '.', '.', '.', '.', '.', '.', 'Q'},
-//              {'.', '.', 'Q', '.', '.', '.', '.', '.'},
-//              {'.', '.', '.', '.', 'Q', '.', '.', '.'}
-//          };
-//    		
-//        String solution = solve(1000);
-//      System.out.println("'.' is valid: " + isValidSquareChar('.'));
-//      System.out.println("'Q' is valid: " + isValidSquareChar('Q'));
-//      System.out.println("'x' is valid: " + isValidSquareChar('x'));
-//        System.out.println("Final solution: " + solution);
-//        System.out.println("Fitness: " + getFitness(solution));
-//      System.out.println("Binary string: " + boardToBinary(validBoard));
-    	
-
-            // Test Q1 - Check Character
-            System.out.println("Q1: isValidSquareChar()");
-            System.out.println(Q1_checkCharacter('Q')); // true
-            System.out.println(Q1_checkCharacter('.')); // true
-            System.out.println(Q1_checkCharacter('x')); // false
-            System.out.println(Q1_checkCharacter(null)); // false
-
-            // Test Q2 - Valid Board
-            System.out.println("\nQ2: isValidBoard()");
-            Character[][] validBoard = {
-                {'.', 'Q', '.', '.', '.', '.', '.', '.'},
-                {'.', '.', '.', 'Q', '.', '.', '.', '.'},
-                {'.', '.', '.', '.', '.', 'Q', '.', '.'},
-                {'.', '.', '.', '.', '.', '.', '.', 'Q'},
-                {'.', '.', 'Q', '.', '.', '.', '.', '.'},
-                {'Q', '.', '.', '.', '.', '.', '.', '.'},
-                {'.', '.', '.', '.', '.', '.', 'Q', '.'},
-                {'.', '.', '.', '.', 'Q', '.', '.', '.'}
-            };
-            System.out.println(Q2_validBoard(validBoard)); // true
-
-            // Test Q3 - boardToBinary()
-            System.out.println("\nQ3: boardToBinary()");
-            String binary = Q3_generateBinaryString(validBoard);
-            System.out.println("Binary: " + binary); // should be 24 bits
-            System.out.println("Length: " + binary.length()); // should be 24
-
-            // Test Q4 - generateRandomBinaryBoard()
-            System.out.println("\nQ4: generateRandomBinaryBoard()");
-            String randBoard = Q4_initialStart();
-            System.out.println("Random Binary: " + randBoard);
-            String solution = init(1050);
-            System.out.println("Solution: " + solution);
-            System.out.println("Fitness : " + Q5_fitnessFunction(solution));
-            
-        }
-
     }
