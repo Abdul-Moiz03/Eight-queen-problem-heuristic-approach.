@@ -1,4 +1,4 @@
-public class C52004EightQueens {
+public class EightQueens {
 
     // Q1: Check if character is valid (either 'Q' or '.')
     public static boolean Q1_checkCharacter(Character c) {
